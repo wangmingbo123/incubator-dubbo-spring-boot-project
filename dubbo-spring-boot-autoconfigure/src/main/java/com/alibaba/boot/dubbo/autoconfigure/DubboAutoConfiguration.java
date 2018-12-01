@@ -26,6 +26,8 @@ import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 import com.alibaba.dubbo.config.spring.context.annotation.DubboConfigConfiguration;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
+import com.alibaba.fastjson.JSON;
+import jdk.nashorn.internal.ir.debug.JSONWriter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -92,6 +94,7 @@ public class DubboAutoConfiguration {
     public ServiceAnnotationBeanPostProcessor serviceAnnotationBeanPostProcessor(Environment environment) {
         RelaxedPropertyResolver resolver = new RelaxedPropertyResolver(environment);
         Set<String> packagesToScan = resolver.getProperty(BASE_PACKAGES_PROPERTY_NAME, Set.class, emptySet());
+        System.out.println("packagesToScan " + JSON.toJSONString(packagesToScan));
         return new ServiceAnnotationBeanPostProcessor(packagesToScan);
     }
 

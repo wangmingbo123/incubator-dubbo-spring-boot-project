@@ -17,8 +17,11 @@
 package com.alibaba.boot.dubbo.demo.provider.bootstrap;
 
 import com.alibaba.boot.dubbo.demo.provider.service.DefaultDemoService;
+import com.alibaba.dubbo.config.annotation.Reference;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * Dubbo Provider Demo
@@ -32,8 +35,16 @@ public class DubboProviderDemo {
 
     public static void main(String[] args) {
 
+//         		@ConfigurationProperties
+//        ServiceAnnotationBeanPostProcessor
+
+//        @Reference(registry = "asa")
+//        an exact match  精确匹配
+
+//        SpringApplication.run(DubboProviderDemo.class,args);
+
         new SpringApplicationBuilder(DubboProviderDemo.class)
-                .web(false)
+                .web(true)
                 .run(args);
 
     }

@@ -81,4 +81,8 @@ public class OverrideDubboConfigApplicationListener implements ApplicationListen
 
     }
 
+    public static void main(String[] args) {
+        System.out.println(OVERRIDE_CONFIG_PROPERTY_NAME);
+    }
+
 }

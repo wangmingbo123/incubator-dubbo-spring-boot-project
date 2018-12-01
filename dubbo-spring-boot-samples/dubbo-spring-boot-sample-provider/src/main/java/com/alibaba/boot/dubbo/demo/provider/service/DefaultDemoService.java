@@ -26,12 +26,7 @@ import com.alibaba.dubbo.config.annotation.Service;
  * @see DemoService
  * @since 1.0.0
  */
-@Service(
-        version = "${demo.service.version}",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
-)
+@Service
 public class DefaultDemoService implements DemoService {
 
     public String sayHello(String name) {

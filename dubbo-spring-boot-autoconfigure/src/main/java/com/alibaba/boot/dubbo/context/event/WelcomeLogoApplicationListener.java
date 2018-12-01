@@ -48,6 +48,7 @@ public class WelcomeLogoApplicationListener implements ApplicationListener<Appli
         final Logger logger = LoggerFactory.getLogger(getClass());
 
         String bannerText = buildBannerText();
+        System.out.println("HHHHHHHHHHHHHHHHHHHHHHHHHHHH");
 
         if (logger.isInfoEnabled()) {
             logger.info(bannerText);
